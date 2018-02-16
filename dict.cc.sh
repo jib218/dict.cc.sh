@@ -1,7 +1,5 @@
 #!/bin/bash
 
-LESS_CONDITION=25
-
 function dict {
     local lang=""
     local input=""
@@ -29,7 +27,7 @@ function dict {
 
     local nLines=$(echo "$text" | wc -l ) 
     
-    if [ "$nLines" -lt "$LESS_CONDITION" ]
+    if [ "$nLines" -lt "$LINES" ] # $LINES is set by bash
     then
         echo "$text"
     else

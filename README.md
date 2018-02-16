@@ -1,10 +1,10 @@
 # dict.cc.sh
 
 A bash script that calls <http://pocket.dict.cc/> with lynx, cuts the output and
-echoes it to the terminal. Depending on the number of lines it calls less. By 
-default dict.cc tries to translate between german and english. The bash script
-takes the optional parameter -<from><to>  for calling specific languages; e.g. 
-"-enfr" for english - french.
+echoes it to the terminal. Depending on the number of available lines in the
+current terminal view it calls less. By default dict.cc tries to translate
+between german and english. The bash script takes the optional parameter
+-<from><to>  for calling specific languages; e.g.  "-enfr" for english - french.
 
 ## Dependencies
 
@@ -53,13 +53,9 @@ takes the optional parameter -<from><to>  for calling specific languages; e.g.
 
 ## Usage
 
-LESS\_CONDITION can be set inside the bash script, it configures the number of 
-lines until less is called. Simply source dict.cc.sh inside your ~/.bashrc 
-or ~/.bash\_profile. 
+Simply source dict.cc.sh inside your ~/.bashrc or ~/.bash\_profile. 
 
 Command | Explanation
 ------------ | -------------
 dict \<term\> | Calls dict.cc with the specified term. The term can consist of several words.
 dict -\<from\>\<to\> \<term\> | Calls pocket.dict.cc with the specified languages.
-
-
