@@ -16,9 +16,12 @@ function dict {
 
     local sanitized=$(echo "$input" | tr ' ' '+')
     local url="http://"$lang"pocket.dict.cc/?s="$sanitized""
-    local text=$(lynx -display_charset=UTF-8 -dump "$url" | \
-                  LC_ALL=C sed '/sec/q' | tail -n +6 )
-    
+
+    local text=$(lynx -display_charset=UTF-8 -dump "$url" | tail -n +6 )
+
+    # Tail reverse because of mac os
+    text=$(echo "${text%©*}" | tail -r | tail -n +4 | tail -r)
+
     local nLines=$(echo "$text" | wc -l ) 
     
     if [ "$nLines" -lt "$LESS_CONDITION" ]

@@ -10,7 +10,6 @@ takes the optional parameter -<from><to>  for calling specific languages; e.g.
 
 - lynx
 - tr
-- sed
 - tail
 - wc
 
