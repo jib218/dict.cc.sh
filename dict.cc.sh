@@ -15,7 +15,8 @@ function dict {
     fi
 
     local sanitized=$(echo "$input" | tr ' ' '+')
-    local text=$(lynx -dump http://"$lang"pocket.dict.cc/?s="$sanitized" | \
+    local url="http://"$lang"pocket.dict.cc/?s="$sanitized""
+    local text=$(lynx -display_charset=UTF-8 -dump "$url" | \
                   LC_ALL=C sed '/sec/q' | tail -n +6 )
     
     local nLines=$(echo "$text" | wc -l ) 
