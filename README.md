@@ -4,7 +4,7 @@ A bash script that calls <http://pocket.dict.cc/> with lynx, cuts the output and
 echoes it to the terminal. Depending on the number of available lines in the
 current terminal view it calls less. By default dict.cc tries to translate
 between german and english. The bash script takes the optional parameter
--<from><to>  for calling specific languages; e.g.  "-enfr" for english - french.
+-\<from\>\<to\>  for calling specific languages; e.g.  "-enfr" for english - french.
 
 ## Dependencies
 
