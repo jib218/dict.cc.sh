@@ -17,7 +17,8 @@ function dict {
     local sanitized=$(echo "$input" | tr ' ' '+')
     local url="http://"$lang"pocket.dict.cc/?s="$sanitized""
 
-    local text=$(lynx -display_charset=UTF-8 -dump "$url" | tail -n +6 )
+    local text=$(lynx -display_charset=UTF-8 -dump "$url" | tail -n +8 | \
+                  LC_ALL=C sed 's/\[\([[:digit:]]*\)\]//' )
 
     if [[ "$(uname)" == "Linux" ]] # linux has no tail -r
     then

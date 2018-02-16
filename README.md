@@ -10,6 +10,7 @@ takes the optional parameter -<from><to>  for calling specific languages; e.g.
 
 - lynx
 - tr
+- sed
 - tail
 - wc
 
@@ -18,39 +19,34 @@ takes the optional parameter -<from><to>  for calling specific languages; e.g.
 ```bash
 # Default is en-de and de-en
 ~ $ dict subsystem
-                    5 results for en-de      » [2]de-en
+   subsystem
+          Teilsystem {n}
+          Untersystem {n}
+          Teilanlage {f}
 
-   [3]subsystem
-          [4]Teilsystem {n}
-          [5]Untersystem {n}
-          [6]Teilanlage {f}
+   subsystem <SS>
+          Subsystem {n} <SS>
 
-   [7]subsystem <SS>
-          [8]Subsystem {n} <SS>
-
-   [9]communications subsystem
-          [10]Kommunikationsuntersystem {n}
+   communications subsystem
+          Kommunikationsuntersystem {n}
 
                                   0.000 sec
-
 # en-fr example
 ~ $ dict -enfr problem
-                    5 results for en-fr      » [2]fr-en
+   problem
+          problème {m}
 
-   [3]problem
-          [4]problème {m}
+   problem [hassle]
+          tracas {m}
 
-   [5]problem [hassle]
-          [6]tracas {m}
+   No problem!
+          Pas de problème !
 
-   [7]No problem!
-          [8]Pas de problème !
+   major problem
+          grand problème {m}
 
-   [9]major problem
-          [10]grand problème {m}
-
-   [11]to get at / to the root of the problem
-          [12]aller au fond du problème
+   to get at / to the root of the problem
+          aller au fond du problème
 
                                   0.002 sec
 ```
