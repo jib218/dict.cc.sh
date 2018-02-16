@@ -64,7 +64,7 @@ or ~/.bash\_profile.
 
 Command | Explanation
 ------------ | -------------
-dict <term> | Calls dict.cc with the specified term. The term can consist of several words.
-dict -<from><to> <term> | Calls pocket.dict.cc with the specified languages.
+dict \<term\> | Calls dict.cc with the specified term. The term can consist of several words.
+dict -\<from\>\<to\> \<term\> | Calls pocket.dict.cc with the specified languages.
 
 
