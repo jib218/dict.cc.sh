@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LESS_CONDITION=25
- 
+
 function dict {
     local lang=""
     local input=""
@@ -19,8 +19,12 @@ function dict {
 
     local text=$(lynx -display_charset=UTF-8 -dump "$url" | tail -n +6 )
 
-    # Tail reverse because of mac os
-    text=$(echo "${text%©*}" | tail -r | tail -n +4 | tail -r)
+    if [[ "$(uname)" == "Linux" ]] # linux has no tail -r
+    then
+        text=$(echo "${text%©*}" | head -n -4 )
+    else # mac os has no head -n -4
+        text=$(echo "${text%©*}" | tail -r | tail -n +4 | tail -r )
+    fi
 
     local nLines=$(echo "$text" | wc -l ) 
     
